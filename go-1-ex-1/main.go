@@ -11,7 +11,7 @@ func main() {
 	yearOfBirth := 2008
 	numberOfSiblings := 1
 	heightInMeters := 1.80
-	zodiacSign := 'S'
+	zodiacSign := '\u2651'
 
 	// TODO: Declare and initialize the variables being used in the output!
 	fmt.Printf("Vor- und Nachname: %s %s\n", firstName, lastName)
