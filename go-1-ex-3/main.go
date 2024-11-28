@@ -9,15 +9,20 @@ import (
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	eyes := rand.Intn(6) + 1 
+	eyes := rand.Intn(6) + 1
 	when := time.Now()
 
-	file, _ := os.Create("output.txt")
-	defer file.Close()
+	//Ausgabe Würfelzahl und Zeit
+	fmt.Fprintln(os.Stdout, "The dice shows:", eyes)
+	fmt.Fprintln(os.Stderr, "The dice was rolled at:", when.Format("2006-01-02 15:04:05"))
 
-	fmt.Fprintln(file, "the dice shows", eyes, "eyes")
-	fmt.Fprintln(file, "the dice was rolled at", when)
+	//Daten ins File schreiben
+	eyesFile, _ := os.Create("eyes.txt")
+	defer eyesFile.Close()
+	fmt.Fprintf(eyesFile, "The dice shows: %d eyes\n", eyes)
 
-	fmt.Println("Ergebnisse wurden in output.txt gespeichert.")
+	//Daten ins File schreiben
+	logFile, _ := os.Create("dice.log")
+	defer logFile.Close()
+	fmt.Fprintf(logFile, "The dice was rolled at: %s\n", when.Format("2006-01-02 15:04:05"))
 }
-

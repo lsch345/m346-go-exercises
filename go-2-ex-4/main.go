@@ -1,8 +1,47 @@
 package main
 
 func main() {
-	// TODO: declare a type for Student (with first and last name)
-	// TODO: declare a type for Class (consisting of multiple students)
-	// TODO: declare a map of modules being attended by multiple classes
-	// TODO: output everything using fmt.Println()
+	package main
+
+	import "fmt"
+	
+	// Schüler mit Vorname und Nachname
+	type Student struct {
+		FirstName string
+		LastName  string
+	}
+	
+	// Klasse mit Liste Schüler
+	type Class struct {
+		Students []Student
+	}
+	
+	func main() {
+		// Map Module mit allen Schülern
+		modules := map[string]Class{
+			"M113": {
+				Students: []Student{
+					{FirstName: "Noah", LastName: "Krummenacher"},
+					{FirstName: "Timo", LastName: "Fuchs"},
+					{FirstName: "Nils", LastName: "Steiner"}
+				},
+			},
+			"M273": {
+				Students: []Student{
+					{FirstName: "Leandro", LastName: "Schwegler"},
+					{FirstName: "Nando", LastName: "Schuermann"},
+					{FirstName: "Tim", LastName: "Huesler"}
+				},
+			},
+		}
+	
+		// Ausgabe
+		fmt.Println("Modules and their classes:")
+		for module, class := range modules {
+			fmt.Println("Module:", module)
+			for _, student := range class.Students {
+				fmt.Printf("\tStudent: %s %s\n", student.FirstName, student.LastName)
+			}
+		}
+	}
 }

@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 
+	//Variabeln deklarieren
 	firstName := "Leandro"
 	lastName := "Schwegler"
 	dayOfBirth := 12
@@ -13,7 +14,7 @@ func main() {
 	heightInMeters := 1.80
 	zodiacSign := '\u2651'
 
-	// TODO: Declare and initialize the variables being used in the output!
+	//Variabeln ausprinten
 	fmt.Printf("Vor- und Nachname: %s %s\n", firstName, lastName)
 	fmt.Printf("Geburtsdatum: %d.%d.%d\n", dayOfBirth, monthOfBirth, yearOfBirth)
 	fmt.Printf("Anzahl Geschwister: %d\n", numberOfSiblings)
