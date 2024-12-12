@@ -30,3 +30,4 @@ func main() {
 	fmt.Printf("%v°F = %v°C\n", f1, convertFahrenheitToCelsius(f1)) // Erwartet: 32°F = 0°C
 	fmt.Printf("%v°F = %v°C\n", f2, convertFahrenheitToCelsius(f2)) // Erwartet: 77°F = 25°C
 	fmt.Printf("%v°F = %v°C\n", f3, convertFahrenheitToCelsius(f3)) // Erwartet: 14°F = -10°C
+}
